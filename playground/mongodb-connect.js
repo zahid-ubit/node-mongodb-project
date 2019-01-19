@@ -12,7 +12,8 @@ MongoClient.connect(url,{useNewUrlParser:true}, function(err, client) {
     const db=client.db(dbName);
      db.collection('Users').insertOne({
          naem:' hamdard',
-         status:'married'
+         status:'married',
+         age:24
      }, (err,result)=>{
        assert.equal(null,err,"failed to insert");
        console.log(JSON.stringify(result.ops,undefined,3));
