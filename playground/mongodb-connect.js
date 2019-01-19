@@ -10,13 +10,13 @@ MongoClient.connect(url,{useNewUrlParser:true}, function(err, client) {
 
     console.log('connected successfully');
     const db=client.db(dbName);
-    //  db.collection('Users').insertOne({
-    //      naem:' hamdard',
-    //      status:'married'
-    //  }, (err,result)=>{
-    //    assert.equal(null,err,"failed to insert");
-    //    console.log(JSON.stringify(result.ops,undefined,3));
-    //  });
+     db.collection('Users').insertOne({
+         naem:' hamdard',
+         status:'married'
+     }, (err,result)=>{
+       assert.equal(null,err,"failed to insert");
+       console.log(JSON.stringify(result.ops,undefined,3));
+     });
 
     db.collection('Users').find({naem:"zahid hamdard"}).toArray().then((docs)=>{
           console.log('Users');
